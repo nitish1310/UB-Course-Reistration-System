@@ -9,17 +9,17 @@ public partial class login : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
-        {
-            div_msg.Visible = false;
-            this.Form.DefaultButton = "btn_login";
+        //if (!IsPostBack)
+        //{
+        //    div_msg.Visible = false;
+        //    this.Form.DefaultButton = "btn_login";
 
-            if (Request.Cookies["UserName"] != null && Request.Cookies["Password"] != null)
-            {
-                txt_username.Text = Request.Cookies["UserName"].Value;
-                txt_password.Attributes["value"] = Request.Cookies["Password"].Value;
-            }
-        }
+        //    if (Request.Cookies["UserName"] != null && Request.Cookies["Password"] != null)
+        //    {
+        //        txt_username.Text = Request.Cookies["UserName"].Value;
+        //        txt_password.Attributes["value"] = Request.Cookies["Password"].Value;
+        //    }
+        //}
     }
     protected void btn_login_Click(object sender, EventArgs e)
     {
@@ -31,7 +31,7 @@ public partial class login : System.Web.UI.Page
                 string connectionString = ConfigurationManager.ConnectionStrings["MySql_ConnectionString"].ConnectionString;
                 using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
-                    string str = "select fName, lName, emailId, password, userType from tbluser where userType = 1 and emailId = @emailId and password = @password ";
+                    string str = "select fName, lName, emailId, password, userType from tbluser where userType = 3 and emailId = @emailId and password = @password ";
 
                     MySqlCommand cmd = new MySqlCommand(str, con);
                     cmd.Parameters.AddWithValue("@emailId", txt_username.Text);
@@ -41,31 +41,43 @@ public partial class login : System.Web.UI.Page
                     if (dr.HasRows)
                     {
                         //Remember username and password code
-                        if (chkRememberMe.Checked)
-                        {
-                            Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(30);
-                            Response.Cookies["Password"].Expires = DateTime.Now.AddDays(30);
-                        }
-                        else
-                        {
-                            Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(-1);
-                            Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
+                        //if (chkRememberMe.Checked)
+                        //{
+                        //    Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(30);
+                        //    Response.Cookies["Password"].Expires = DateTime.Now.AddDays(30);
+                        //}
+                        //else
+                        //{
+                        //    Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(-1);
+                        //    Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
 
-                        }
-                        Response.Cookies["UserName"].Value = txt_username.Text.Trim();
-                        Response.Cookies["Password"].Value = txt_password.Text.Trim();
+                        //}
+                        //Response.Cookies["UserName"].Value = txt_username.Text.Trim();
+                        //Response.Cookies["Password"].Value = txt_password.Text.Trim();
 
                         dr.Read();
                         {
-
+                            string userType = dr["userType"].ToString();
                             //User Sessions                               
+                           
+                            if (Convert.ToInt32(dr["userType"]) == 1)
+                            {
+                                Response.Redirect("student-home.aspx", false);
+                            }
+                            else if(Convert.ToInt32(dr["userType"]) == 3)
+                            {
+                                Response.Redirect("admin-home.aspx", false);
+                            }
+                            else
+                            {
+                                Response.Redirect("advisor-home.aspx", false);
+                            }
                             Session["emailId"] = dr["emailId"].ToString();
                             Session["userType"] = dr["userType"];
+
                             Session["fName"] = dr["fName"].ToString();
                             Session["lName"] = dr["lName"].ToString();
-
-
-                        }          Response.Redirect("home.aspx", false);
+                        }         
                                
                         dr.Close();
                     }

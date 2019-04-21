@@ -10,7 +10,7 @@
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap-social.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="images/favicons.ico" type="image/x-icon" />
+     <link rel="icon" href="images/UB-favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <style type="text/css">
         .checkb {
@@ -27,8 +27,6 @@
             background-size: cover;
         }
     </style>
-    <%--Favicon--%>
-    <link rel="icon" href="images/fevicon.ico" type="image/x-icon" />
 </head>
 <body class="backgrd">
     <form id="form1" runat="server">
@@ -37,7 +35,7 @@
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <h1 class="text-center login-title" style="color: #ffffff; font-weight: bold;">Sign in to Course Registration</h1>
                     <div class="account-wall" style="background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)) center;">
-                        <img class="profile-img" src="images/dheya-icon.png"
+                        <img class="profile-img" src="images/logo.png"
                             alt="" />
                         <div class="form-signin">
                             <div id="div_msg" runat="server" style="margin-top: 10px; text-align: center; margin-bottom: 25px">
@@ -58,7 +56,7 @@
                             </div>
                             <asp:LinkButton ID="btn_login" runat="server"
                                 class="btn btn-lg btn-primary btn-block" Style="text-align: center"
-                                OnClick="btn_login_Click" TabIndex="3">Login to CDF-Dashboard</asp:LinkButton>
+                                OnClick="btn_login_Click" TabIndex="3">Login</asp:LinkButton>
 
                             <label class="checkbox pull-left fontc row">
                                 Remember me
