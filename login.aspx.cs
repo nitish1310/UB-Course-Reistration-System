@@ -31,7 +31,7 @@ public partial class login : System.Web.UI.Page
                 string connectionString = ConfigurationManager.ConnectionStrings["MySql_ConnectionString"].ConnectionString;
                 using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
-                    string str = "select fName, lName, emailId, password, userType from tbluser where userType = 3 and emailId = @emailId and password = @password ";
+                    string str = "select userId, fName, lName, emailId, password, userType from tbluser where emailId = @emailId and password = @password ";
 
                     MySqlCommand cmd = new MySqlCommand(str, con);
                     cmd.Parameters.AddWithValue("@emailId", txt_username.Text);
@@ -41,19 +41,19 @@ public partial class login : System.Web.UI.Page
                     if (dr.HasRows)
                     {
                         //Remember username and password code
-                        //if (chkRememberMe.Checked)
-                        //{
-                        //    Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(30);
-                        //    Response.Cookies["Password"].Expires = DateTime.Now.AddDays(30);
-                        //}
-                        //else
-                        //{
-                        //    Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(-1);
-                        //    Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
+                        if (chkRememberMe.Checked)
+                        {
+                            Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(30);
+                            Response.Cookies["Password"].Expires = DateTime.Now.AddDays(30);
+                        }
+                        else
+                        {
+                            Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(-1);
+                            Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
 
-                        //}
-                        //Response.Cookies["UserName"].Value = txt_username.Text.Trim();
-                        //Response.Cookies["Password"].Value = txt_password.Text.Trim();
+                        }
+                        Response.Cookies["UserName"].Value = txt_username.Text.Trim();
+                        Response.Cookies["Password"].Value = txt_password.Text.Trim();
 
                         dr.Read();
                         {
@@ -74,9 +74,11 @@ public partial class login : System.Web.UI.Page
                             }
                             Session["emailId"] = dr["emailId"].ToString();
                             Session["userType"] = dr["userType"];
-
+                            Session["userId"] = dr["userId"];
                             Session["fName"] = dr["fName"].ToString();
                             Session["lName"] = dr["lName"].ToString();
+
+                            int id = Convert.ToInt32(dr["userId"]);
                         }         
                                
                         dr.Close();

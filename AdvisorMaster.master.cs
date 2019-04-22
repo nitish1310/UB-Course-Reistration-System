@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class AdminMaster : System.Web.UI.MasterPage
+public partial class AdvisorMaster : System.Web.UI.MasterPage
 {
     private static readonly log4net.ILog Log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
@@ -14,14 +14,11 @@ public partial class AdminMaster : System.Web.UI.MasterPage
         int userType = Convert.ToInt32(Session["userType"]);
         try
         {
-            if (userType == 3)
+            if (userType == 2)
             {
 
                 lbl_firstname.Text = Session["fName"].ToString();
                 lbl_lastname.Text = Session["lName"].ToString();
-
-
-
             }
             else
             {

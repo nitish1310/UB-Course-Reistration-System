@@ -1,4 +1,5 @@
 ﻿using log4net;
+using MySql.Data.MySqlClient;
 using System;
 using System.Configuration;
 using System.Data;
@@ -439,11 +440,11 @@ public class db_context
     {
         try
         {
-            using (SqlConnection con = new SqlConnection(strcon))
+            using (MySqlConnection con = new MySqlConnection(strcon))
             {
                 //SqlConnection con = new SqlConnection(strcon);
                // SqlCommand cmd = new SqlCommand(StrQuery, con);
-                SqlDataAdapter da = new SqlDataAdapter(StrQuery,con);
+                MySqlDataAdapter da = new MySqlDataAdapter(StrQuery,con);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
 
@@ -451,7 +452,7 @@ public class db_context
                 ddl.DataTextField = ds.Tables[0].Columns[1].ToString();
                 ddl.DataValueField = ds.Tables[0].Columns[0].ToString();
                 ddl.DataBind();
-                ddl.Items.Insert(0, "--Select--");
+                //ddl.Items.Insert(0, "--Select--");
                 ds.Tables.Clear();
                 ds.Dispose();
                 da.Dispose();

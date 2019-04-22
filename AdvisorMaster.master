@@ -1,10 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="StudentMaster.master.cs" Inherits="CDFMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdvisorMaster.master.cs" Inherits="AdvisorMaster" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>University of Bridgeport | Course Registration</title>
+    <title>University of Bridgeport | Advisor Dashboard</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <!-- Bootstrap -->
@@ -43,7 +43,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="<%=ResolveUrl("~") %>student-home.aspx" class="site_title"><%--<i class="fa fa-group"></i>--%><i><img src="<%=ResolveUrl("~") %>images/headerlogo.png" style="width: 200px;" /></i></a>
+                        <a href="<%=ResolveUrl("~") %>advisor-home.aspx" class="site_title"><%--<i class="fa fa-group"></i>--%><i><img src="<%=ResolveUrl("~") %>images/headerlogo.png" style="width: 200px;" /></i></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -68,20 +68,16 @@
                         <div class="menu_section">
                             <%--  <h3>General</h3>--%>
                             <ul class="nav side-menu">
-                                <li><a href="<%=ResolveUrl("~") %>student-home.aspx"><i class="fa fa-home"></i>  Home</a>
+                                <li><a href="<%=ResolveUrl("~") %>advisor-home.aspx"><i class="fa fa-home"></i>  Home</a>
                                 </li>
-                                <li><a><i class="fa fa-graduation-cap"></i>  Academics <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-graduation-cap"></i>   Registration Details<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li id="abilityfilter" runat="server"><a href="course-registration.aspx">Course Registration</a></li>
-                                        <li id="interestfilter" runat="server"><a href="#">Student Planning</a></li>
-                                        <li id="personalityfilter" runat="server"><a href="#">Commencement Overview</a></li>
-                                        <li id="abilityInterestFilter" runat="server"><a href="#">Enrollment Verification</a></li>
-                                        <li><a href="#">Course Catalog</a></li>
-    
+                                        <li id="abilityfilter" runat="server"><a href="registered-courses.aspx">Course Registration Details</a></li>
+                                        
                                     </ul>
                                 </li>
                                 
-                                <li id="CareerSearch" runat="server"><a><i class="fa fa-university"></i>  Financial Information <span class="fa fa-chevron-down"></span></a>
+                                <%--<li id="CareerSearch" runat="server"><a><i class="fa fa-university"></i>  Financial Information <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="#">Financial Aid</a></li>
                                         <li><a href="#">Tax Information</a></li>
@@ -99,7 +95,7 @@
                                         <li><a href="#">User Profile</a></li>
                                         <li><a href="#">Emergency Information</a></li>
                                     </ul>
-                                </li>
+                                </li>--%>
                                 
                             </ul>
                         </div>
@@ -133,7 +129,7 @@
                             </li>
 
                             <li role="presentation" style="margin: 17px 20px 0 0;">
-                                <p style="font-size: 14px;">Welcome to UB Student Dashboard</p>
+                                <p style="font-size: 14px;">Welcome to UB Advisor Dashboard</p>
                             </li>
 
                         </ul>

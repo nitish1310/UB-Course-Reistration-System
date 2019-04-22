@@ -43,7 +43,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="<%=ResolveUrl("~") %>home.aspx" class="site_title"><%--<i class="fa fa-group"></i>--%><i><img src="<%=ResolveUrl("~") %>images/headerlogo.png" style="width: 200px;" /></i></a>
+                        <a href="<%=ResolveUrl("~") %>admin-home.aspx" class="site_title"><%--<i class="fa fa-group"></i>--%><i><img src="<%=ResolveUrl("~") %>images/headerlogo.png" style="width: 200px;" /></i></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -68,7 +68,7 @@
                         <div class="menu_section">
                             <%--  <h3>General</h3>--%>
                             <ul class="nav side-menu">
-                                <li><a href="<%=ResolveUrl("~") %>home.aspx"><i class="fa fa-home"></i>  Home</a>
+                                <li><a href="<%=ResolveUrl("~") %>admin-home.aspx"><i class="fa fa-home"></i>  Home</a>
                                 </li>
                                 <li><a><i class="fa fa-graduation-cap"></i>Registration Details<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
@@ -133,7 +133,7 @@
                             </li>
 
                             <li role="presentation" style="margin: 17px 20px 0 0;">
-                                <p style="font-size: 14px;">Welcome to UB Student Dashboard</p>
+                                <p style="font-size: 14px;">Welcome to UB Admin Dashboard</p>
                             </li>
 
                         </ul>
@@ -251,7 +251,7 @@
             © Copyright
            
             <script>document.write(new Date().getFullYear());</script>
-            &nbsp;| <a href="http://dheya.com" target="_blank">University of Bridgeport</a>
+            &nbsp;| <a href="https://www.bridgeport.edu/" target="_blank">University of Bridgeport</a>
         </div>
         <div class="clearfix"></div>
     </footer>
