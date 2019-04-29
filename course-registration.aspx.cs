@@ -4,6 +4,8 @@ using System.Data;
 using log4net;
 using System.Configuration;
 using MySql.Data.MySqlClient;
+using System.Linq;
+using System.Collections.Generic;
 
 public partial class course_registration : System.Web.UI.Page
 {
@@ -11,7 +13,7 @@ public partial class course_registration : System.Web.UI.Page
 
     //create a object db_context  class for database related method.
     db_context dbContext = new db_context();
-
+   
     protected void Page_Load(object sender, EventArgs e)
     {
         //only first time execuite on below code 
@@ -21,14 +23,28 @@ public partial class course_registration : System.Web.UI.Page
             FillGrid();
             try
             {
-                //string StrDepartment = "SELECT deptId, deptName FROM tbldepartment";
-                //dbContext.BindDropDownlist(StrDepartment, ref ddlDepartment);
+                string StrDepartment = "SELECT Distinct deptId, deptName FROM tbldepartment";
+                dbContext.BindDropDownlist(StrDepartment, ref ddlDepartment);
 
-                //string StrCourseLevel = "SELECT courseLevel FROM tblcourse where "+ ddlDepartment.SelectedValue + "";
-                //dbContext.BindDropDownlist(StrCourseLevel, ref ddlCourseLevel);
-                //dbContext.BindDropDownlist(StrCourseLevel, ref ddlCourseName);
+                string StrCourse = "SELECT Distinct courseId, courseName FROM tblcourse";
+                dbContext.BindDropDownlist(StrCourse, ref ddlCourseName);
 
-               
+                //string constr = ConfigurationManager.ConnectionStrings["MySql_ConnectionString"].ConnectionString;
+                //using (MySqlConnection con = new MySqlConnection(constr))
+                //{
+                //    string com = "SELECT Distinct deptId, deptName FROM tbldepartment";
+                //    MySqlDataAdapter adpt = new MySqlDataAdapter(com, con);
+                //    DataTable dt = new DataTable();
+                //    adpt.Fill(dt);
+                //    ddlDepartment.DataSource = dt;
+                //    ddlDepartment.SelectedValue = null;
+                //    ddlDepartment.DataBind();
+
+                //    ddlDepartment.DataTextField = "deptName";
+                //    ddlDepartment.DataValueField = "deptId";
+
+                //    ddlDepartment.DataBind();
+                //}
 
             }
             catch (Exception ex)
@@ -37,6 +53,8 @@ public partial class course_registration : System.Web.UI.Page
                 
             }
         }
+
+        
 
     }
 
@@ -125,7 +143,7 @@ public partial class course_registration : System.Web.UI.Page
                 if (id == 0)
                 {                      
                     //Insert a new Executive data 
-                    string strcmd = "INSERT INTO tblregistration (type, userId, sectionId, courseId, status) values ('Campus','" + Convert.ToInt32(Session["userId"]) + "',1,'" + courseID + "', 1)";
+                    string strcmd = "INSERT INTO tblregistration (type, userId, sectionId, courseId, status) values ('Campus'," + Convert.ToInt32(Session["userId"]) + ",1,'" + courseID + "', 1)";
                     cmd = new MySqlCommand(strcmd, connection);
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)

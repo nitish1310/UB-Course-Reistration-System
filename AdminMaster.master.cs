@@ -11,7 +11,7 @@ public partial class AdminMaster : System.Web.UI.MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        int userType = Convert.ToInt32(Session["userType"]);
+           int userType = Convert.ToInt32(Session["userType"]);
         try
         {
             if (userType == 3)

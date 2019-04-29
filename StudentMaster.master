@@ -73,6 +73,7 @@
                                 <li><a><i class="fa fa-graduation-cap"></i>  Academics <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li id="abilityfilter" runat="server"><a href="course-registration.aspx">Course Registration</a></li>
+                                         <li id="Li1" runat="server"><a href="student-message.aspx">Message</a></li>
                                         <li id="interestfilter" runat="server"><a href="#">Student Planning</a></li>
                                         <li id="personalityfilter" runat="server"><a href="#">Commencement Overview</a></li>
                                         <li id="abilityInterestFilter" runat="server"><a href="#">Enrollment Verification</a></li>

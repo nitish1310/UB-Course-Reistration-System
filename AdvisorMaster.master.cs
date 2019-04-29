@@ -19,6 +19,9 @@ public partial class AdvisorMaster : System.Web.UI.MasterPage
 
                 lbl_firstname.Text = Session["fName"].ToString();
                 lbl_lastname.Text = Session["lName"].ToString();
+
+
+
             }
             else
             {

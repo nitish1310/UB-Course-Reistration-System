@@ -72,34 +72,15 @@
                                 </li>
                                 <li><a><i class="fa fa-graduation-cap"></i>Registration Details<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li id="abilityfilter" runat="server"><a href="#">Course Registration Details</a></li>
-                                        <li id="interestfilter" runat="server"><a href="#">Student Planning</a></li>
-                                        <li id="personalityfilter" runat="server"><a href="#">Commencement Overview</a></li>
-                                        <li id="abilityInterestFilter" runat="server"><a href="#">Enrollment Verification</a></li>
-                                        <li><a href="#">Course Catalog</a></li>
-    
+                                        <li id="abilityfilter" runat="server"><a href="allstudent-list.aspx">Registered Student List</a></li>                                      
                                     </ul>
                                 </li>
-                                
-                                <%--<li id="CareerSearch" runat="server"><a><i class="fa fa-university"></i>  Financial Information <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-graduation-cap"></i>Course Details<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="#">Financial Aid</a></li>
-                                        <li><a href="#">Tax Information</a></li>
-                               
+                                        <li id="Li1" runat="server"><a href="course-list.aspx">Course List</a></li>                                      
                                     </ul>
                                 </li>
-                                   
-                                <li><a><i class="fa fa-handshake-o"></i>  Employment <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="#">Employee</a></li>
-                                    </ul>
-                                </li>
-                                <li><a><i class="fa fa-user-circle-o"></i>  User Options <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="#">User Profile</a></li>
-                                        <li><a href="#">Emergency Information</a></li>
-                                    </ul>
-                                </li>--%>
+                              
                                 
                             </ul>
                         </div>

@@ -17,7 +17,7 @@
         <div class="x_panel">
             <div class="x_title">
                 <h2>Course Registration</h2>
-                <ul class="nav navbar-right panel_toolbox">                    
+                <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
 
@@ -28,15 +28,14 @@
             </div>
             <div class="x_content">
                 <br />
-                 <div id="div_msg" runat="server" class="" style="text-align: center; margin-top: 10px;"></div>
+                <div id="div_msg" runat="server" class="" style="text-align: center; margin-top: 10px;"></div>
                 <div class="row " style="margin-top: 40px;">
                     <label class="col-sm-2 col-sm-offset-2  control-label">
                         Department :
+                   
                     </label>
                     <div class="col-sm-4">
-                        <asp:DropDownList ID="ddlDepartment" class="form-control"  runat="server">
-                            <asp:ListItem>--Select--</asp:ListItem>
-                            <asp:ListItem>Electrical</asp:ListItem>
+                        <asp:DropDownList ID="ddlDepartment" runat="server" CssClass="form-control">
                         </asp:DropDownList>
                     </div>
                     <div class="col-sm-1">
@@ -48,9 +47,10 @@
                     <label class="col-sm-2 col-sm-offset-2  control-label">
                         Course Level :</label>
                     <div class="col-sm-4">
-                         <asp:DropDownList class="form-control" ID="ddlCourseLevel" runat="server">
-                             <asp:ListItem>--Select--</asp:ListItem>
-                              <asp:ListItem>Graduate</asp:ListItem>
+                        <asp:DropDownList class="form-control" ID="ddlCourseLevel" runat="server">
+                            <asp:ListItem>--Select--</asp:ListItem>
+                            <asp:ListItem>Graduate</asp:ListItem>
+                            <asp:ListItem>Under-Graduate</asp:ListItem>
                         </asp:DropDownList>
                     </div>
                     <div class="col-sm-1">
@@ -58,14 +58,12 @@
                             ValidationGroup="a" InitialValue="--Select--">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
-              
+
                 <div class="row ">
                     <label class="col-sm-2 col-sm-offset-2  control-label">
                         Course Name :</label>
                     <div class="col-sm-4">
-                        <asp:DropDownList class="form-control" ID="ddlCourseName" runat="server">
-                            <asp:ListItem>--Select--</asp:ListItem>
-                             <asp:ListItem>OS</asp:ListItem>
+                        <asp:DropDownList ID="ddlCourseName" runat="server" CssClass="form-control">
                         </asp:DropDownList>
                     </div>
                     <div class="col-sm-1">
@@ -88,7 +86,7 @@
                     </div>
                 </div>
 
-                <div align="center" style="margin-top:20px;">
+                <div align="center" style="margin-top: 20px;">
                     <asp:GridView ID="gridRegistration" runat="server" AutoGenerateColumns="False" DataKeyNames="courseId"
                         OnSelectedIndexChanged="gridRegistration_SelectedIndexChanged" Width="80%" CssClass="table table-responsive"
                         OnPageIndexChanging="gridRegistration_PageIndexChanging" CellPadding="4" ForeColor="#333333"
@@ -114,14 +112,16 @@
                         <SortedDescendingCellStyle BackColor="#FFFDF8" />
                         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                     </asp:GridView>
-                    
-                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="a" />
+
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="a" />
                 </div>
             </div>
         </div>
+
+
     </form>
     <!-- Custom Theme Scripts -->
-    <script src="../js/custom.min.js"></script>
+    <script src="js/custom.min.js"></script>
 
 </asp:Content>
 

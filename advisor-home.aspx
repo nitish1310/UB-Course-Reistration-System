@@ -24,21 +24,20 @@
         <div class="animated flipInY col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="tile-stats">
                 <div class="icon"><i class="fa fa-user-plus purple"></i></div>
-                <div class="count">
-                    <asp:Label ID="leads_count" runat="server">3</asp:Label>
+                 <div class="count">
+                    <asp:Label ID="leads_count" runat="server">10</asp:Label>
                 </div>
-                <h3 style="margin-top: 15px;">Course Registered</h3>
+                <h3 style="margin-top: 15px;">Total Student Registered the Course</h3>
             </div>
         </div>
         <div class="animated flipInY col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="tile-stats">
-                <div class="icon" id="lbl_lastvisit" runat="server"><i class="fa fa-eye red"></i></div>
+                <div class="icon" id="lbl_lastvisit" runat="server"><i class="fa fa-book red"></i></div>
                 <div class="count">
-                    <asp:Label ID="visits_count" runat="server">9</asp:Label>
+                    <asp:Label ID="visits_count" runat="server">15</asp:Label>
                 </div>
-                <h3 style="margin-top: 15px;">Total Credits</h3>
+                <h3 style="margin-top: 15px;">Total Courses</h3>
             </div>
-
         </div>
     </div>
     <br />

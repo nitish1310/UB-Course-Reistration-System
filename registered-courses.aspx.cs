@@ -101,7 +101,7 @@ public partial class registered_courses : System.Web.UI.Page
     {
         try
         {
-            using (MySqlConnection connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySql_ConnectionString"].ConnectionString.ToString()))
+            using (MySqlConnection connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySql_ConnectionString"].ConnectionString))
             {               
                 connection.Open();
                 
